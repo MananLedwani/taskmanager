@@ -2,7 +2,6 @@ package handler
 
 import (
 	"encoding/json"
-	"log"
 	"net/http"
 
 	"github.com/MananLedwani/taskmanager/backend/internal/models"
@@ -21,8 +20,6 @@ func NewAuthHandler(authService service.AuthService) *AuthHandler {
 
 func (h *AuthHandler) Signup(w http.ResponseWriter, r *http.Request) {
 	var user models.User
-
-	log.Print("visited")
 
 	if err := json.NewDecoder(r.Body).Decode(&user); err != nil {
 		http.Error(w, "Invalid request body", http.StatusBadRequest)

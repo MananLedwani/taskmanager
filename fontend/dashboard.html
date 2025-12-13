@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body onload="loadTasks()">
+    <div class="top-bar">
+      <h3>Task Manager</h3>
+      <button
+        class="logout"
+        onclick="logout()"
+        title="Logout from your account"
+      >
+        Logout
+      </button>
+    </div>
+    <div class="container">
+      <h2>My Tasks</h2>
+
+      <div class="task-input">
+        <input
+          type="text"
+          id="task-title"
+          placeholder="Enter new task"
+          title="Type a new task and click Add"
+        />
+        <button onclick="createTask()" title="Add a new task">Add Task</button>
+      </div>
+
+      <ul id="task-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

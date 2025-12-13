@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Signup | Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <h2>Create Account</h2>
+
+      <input type="text" id="signup-username" placeholder="Username" />
+      <input type="email" id="signup-email" placeholder="Email" />
+      <input type="password" id="signup-password" placeholder="Password" />
+
+      <button onclick="signup()">Signup</button>
+
+      <p id="auth-message"></p>
+
+      <p class="link">
+        Already have an account?
+        <a href="login.html">Back to login</a>
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

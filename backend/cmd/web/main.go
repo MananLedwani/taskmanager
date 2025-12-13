@@ -7,6 +7,7 @@ import (
 
 	"github.com/MananLedwani/taskmanager/backend/internal/config"
 	"github.com/MananLedwani/taskmanager/backend/internal/constants"
+	"github.com/MananLedwani/taskmanager/backend/internal/middleware"
 	"github.com/MananLedwani/taskmanager/backend/internal/repository"
 	"github.com/MananLedwani/taskmanager/backend/internal/router"
 	"github.com/MananLedwani/taskmanager/backend/internal/service"
@@ -43,8 +44,10 @@ func main() {
 
 	r := router.SetupRouter(authService, taskService)
 
+	handler := middleware.CorsMiddleWare(r)
+
 	log.Println("Server running on http://localhost:8080")
-	if err := http.ListenAndServe(":8080", r); err != nil {
+	if err := http.ListenAndServe(":8080", handler); err != nil {
 		log.Fatal("Server failed:", err)
 	}
 }
